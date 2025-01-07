@@ -6,7 +6,7 @@ import upload_area from './upload_area.png'
 import parcel_icon from './parcel_icon.png'
 import aftabpic from './aftabpic.jpg'
 
-export const url = 'http://localhost:4000'
+export const url = 'https://big-butcher-backend.onrender.com'
 export const currency = '₹'
 
 export const assets ={
