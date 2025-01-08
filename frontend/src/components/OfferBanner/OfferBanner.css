@@ -1,63 +1,90 @@
 .offer-banner {
-    background-color: #bbb2a5;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .scrolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll 10s linear infinite;
-    font-size: 18px;
-  }
-  
-  .scrolling-text span {
-    display: inline-block;
-    margin-right: 50px; /* Space between offers */
-    font-weight: bold;
-  }
-  
-  @keyframes scroll {
-    0% {
+  background-color: #bbb2a5;
+  color: #fff;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+  font-size: 18px; /* Default font size */
+}
+
+.scrolling-text span {
+  display: inline-block;
+  margin-right: 50px; /* Space between offers */
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% {
       transform: translateX(100%);
-    }
-    100% {
+  }
+  100% {
       transform: translateX(-100%);
-    }
   }
-  
-.offer-banner {
-    background-color: #bbb2a5;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-  }
-  
+}
+
+/* Responsive adjustments */
+
+/* For screens 1050px or less */
+@media (max-width: 1050px) {
   .scrolling-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll 10s linear infinite;
-    font-size: 18px;
+      font-size: 16px; /* Slightly smaller font size for medium screens */
   }
-  
+
   .scrolling-text span {
-    display: inline-block;
-    margin-right: 50px; /* Space between offers */
-    font-weight: bold;
+      margin-right: 30px; /* Reduce space between offers */
   }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+}
+
+/* For screens 900px or less */
+@media (max-width: 900px) {
+  .scrolling-text {
+      font-size: 14px; /* Smaller font size for smaller screens */
   }
-  
+
+  .scrolling-text span {
+      margin-right: 20px; /* Adjust space between offers */
+  }
+}
+
+/* For screens 750px or less (mobile devices) */
+@media (max-width: 750px) {
+  .offer-banner {
+    margin: 0;
+      padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .scrolling-text {
+      font-size: 12px; /* Smallest font size for mobile screens */
+  }
+
+  .scrolling-text span {
+      margin-right: 10px; /* Further reduce space between offers */
+  }
+}
+
+/* For very small screens (e.g., small mobile phones) */
+@media (max-width: 480px) {
+  .offer-banner {
+    margin: 0;
+      padding: 6px 5px; /* Even smaller padding for very small screens */
+  }
+
+  .scrolling-text {
+      font-size: 10px; /* Even smaller font size for extremely small screens */
+  }
+
+  .scrolling-text span {
+      margin-right: 5px; /* Minimal space between offers */
+  }
+}
+
   
