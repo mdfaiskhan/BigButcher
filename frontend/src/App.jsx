@@ -13,6 +13,7 @@ import Verify from './pages/Verify/Verify'
 import Header2 from './components/Header2/Header2'
 import FoodCategory from './components/FoodCategory/FoodCategory'
 import AboutUs from './components/AboutUs/AboutUs'
+import ExploreMenu from './components/ExploreMenu/ExploreMenu'
 
 const App = () => {
 
@@ -33,6 +34,7 @@ const App = () => {
           <Route path='/myorders' element={<MyOrders />}/>
           <Route path='/verify' element={<Verify />}/>
           <Route path='/aboutus' element={<AboutUs/>}/>
+          <Route path='/explore-menu' element={<ExploreMenu/>} />
         </Routes>
       </div>
       <Footer />
@@ -41,3 +43,4 @@ const App = () => {
 }
 
 export default App
+
