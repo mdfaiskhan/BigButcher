@@ -72,6 +72,7 @@
 
 /* Text under the heading */
 .explore-menu-text {
+  padding-left: 20%;
   max-width: 80%;
   color: #707070;
   font-size: max(1vw, 16px);
