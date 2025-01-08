@@ -25,7 +25,7 @@ const FeaturesBlock = () => {
     },
     {
       heading: "Customize",
-      text: "Cut your meat as you prefer with Big Butcher's.",
+      text: "Cut your meat to your preference with Big Butcher's experts.",
       icon: <FaCut />, // Icon for Customize
       img: assets.feature4, // Replace with assets.feature4
     },
