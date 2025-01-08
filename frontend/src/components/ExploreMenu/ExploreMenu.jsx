@@ -89,11 +89,9 @@ const ExploreMenu = () => {
 
   return (
     <div className="explore-menu" id="explore-menu">
-      <h1>Explore Our Menu</h1>
+      <h1>View Our Meats</h1>
       <p className="explore-menu-text">
-        Choose from a diverse menu featuring a delectable array of dishes. Our
-        mission is to satisfy your cravings and elevate your dining experience,
-        one delicious meal at a time.
+      "Savor a variety of premium meats, handpicked to satisfy your cravings. Elevate your meals with our fresh, high-quality cuts delivered straight to your door!"
       </p>
       <div className="explore-menu-list">
         {menu_list.map((item, index) => (
