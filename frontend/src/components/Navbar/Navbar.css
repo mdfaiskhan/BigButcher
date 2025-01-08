@@ -1,8 +1,18 @@
 .navbar {
-    padding: 20px 0px;
+    position: fixed; /* Keeps the navbar fixed at the top */
+    top: 0; /* Aligns it to the top */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+    background-color: white; /* Prevents overlapping content visibility */
+    padding-top: 9px;
+    padding-bottom: 8px;
+    padding-left: 10%;
+    padding-right: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
 }
 
 .navbar .logo {
@@ -28,11 +38,11 @@
     gap: 40px;
 }
 
-.navbar-search-icon{
-position: relative;
+.navbar-search-icon {
+    position: relative;
 }
 
-.navbar-search-icon .dot{
+.navbar-search-icon .dot {
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -44,10 +54,10 @@ position: relative;
 
 .navbar-right button {
     background: transparent;
-    font-size: 16px;
+    font-size: 16px; /* Default size */
     color: #49557E;
     border: 1px solid #FF4C24;
-    padding: 10px 30px;
+    padding: 10px 30px; /* Default padding */
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
@@ -57,29 +67,33 @@ position: relative;
     background: #fff4f2;
 }
 
-.navbar-profile{
+.navbar-profile {
     position: relative;
-
 }
-.navbar-profile-dropdown{
+
+.navbar-profile-dropdown {
     position: absolute;
     display: none;
     right: 0;
     z-index: 1;
 }
-.navbar-profile-dropdown li{
+
+.navbar-profile-dropdown li {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
 }
-.navbar-profile-dropdown img{
+
+.navbar-profile-dropdown img {
     width: 20px;
 }
-.navbar-profile-dropdown li:hover{
+
+.navbar-profile-dropdown li:hover {
     color: #FF4C24;
 }
-.navbar-profile:hover .navbar-profile-dropdown{
+
+.navbar-profile:hover .navbar-profile-dropdown {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -90,14 +104,22 @@ position: relative;
     outline: 2px solid white;
     list-style: none;
 }
-.navbar-profile hr{
+
+.navbar-profile hr {
     background-color: gray;
     height: 1px;
     border: none;
 }
-@media (max-width:1050px) {
+
+/* Adjustments for Body Content */
+body {
+    padding-top: 80px; /* Adjust this value based on navbar height */
+}
+
+/* Responsive Design */
+@media (max-width: 1050px) {
     .navbar .logo {
-        width: 140px;
+        width: 140px; /* Slightly smaller logo for medium screens */
     }
 
     .navbar-menu {
@@ -114,13 +136,14 @@ position: relative;
     }
 
     .navbar-right button {
-        padding: 8px 25px;
+        font-size: 14px; /* Smaller font size for medium screens */
+        padding: 8px 25px; /* Adjusted padding */
     }
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
     .navbar .logo {
-        width: 120px;
+        width: 120px; /* Further reduce the logo size for smaller screens */
     }
 
     .navbar-menu {
@@ -137,13 +160,28 @@ position: relative;
     }
 
     .navbar-right button {
-        font-size: 15px;
-        padding: 7px 20px;
+        font-size: 13px; /* Further reduce font size */
+        padding: 7px 20px; /* Compact padding for smaller screens */
     }
 }
 
-@media (max-width:750px) {
+@media (max-width: 750px) {
     .navbar-menu {
-        display: none;
+        display: none; /* Hides menu for smaller screens */
+    }
+
+    .navbar .logo {
+        width: 100px; /* Smallest logo size for mobile screens */
+    }
+
+    .navbar {
+        padding: 10px 0px; /* Adjust padding for smaller screens */
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .navbar-right button {
+        font-size: 12px; /* Smallest font size */
+        padding: 5px 15px; /* Compact padding */
     }
 }
