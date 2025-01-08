@@ -16,19 +16,19 @@ const Footer = () => {
           </p>
           <br />
           <div className="footer-social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61571285090644" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61570845011410&mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <FaTwitter />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedinIn />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            </a> */}
+            <a href="https://www.instagram.com/big.bucher?igsh=MTlzdno0aXRrcm83eQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <a href="https://wa.me/918150053321" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <FaWhatsapp />
             </a>
           </div>
@@ -38,9 +38,16 @@ const Footer = () => {
         <div className="footer-content-center">
           <h2>COMPANY</h2>
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Delivery</li>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+            <a href="/aboutus" class="nav-link">About Us</a>
+            </li>
+
+            <li>
+              <a href="/explore-menu">Menu</a>
+            </li>
             <li>Privacy Policy</li>
           </ul>
         </div>
