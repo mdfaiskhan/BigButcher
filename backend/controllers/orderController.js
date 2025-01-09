@@ -5,19 +5,22 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 //config variables
 const currency = "inr";
-const deliveryCharge = 50;
-const frontend_URL = 'https://big-butcher-frontend.onrender.com';
+const deliveryCharge = 100;
+const frontend_URL = 'http://localhost:5173';
+
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
-
     try {
+        const subtotal = req.body.amount; // Total of items before delivery charges
+        const deliveryFee = subtotal > 999 ? 0 : deliveryCharge; // Apply delivery logic
+
         const newOrder = new orderModel({
             userId: req.body.userId,
             items: req.body.items,
-            amount: req.body.amount,
+            amount: subtotal + deliveryFee, // Total amount includes delivery charge
             address: req.body.address,
-        })
+        });
         await newOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
@@ -25,60 +28,62 @@ const placeOrder = async (req, res) => {
             price_data: {
                 currency: currency,
                 product_data: {
-                    name: item.name
+                    name: item.name,
                 },
-                unit_amount: item.price * 100 
+                unit_amount: item.price * 100,
             },
-            quantity: item.quantity
-        }))
+            quantity: item.quantity,
+        }));
 
-        line_items.push({
-            price_data: {
-                currency: currency,
-                product_data: {
-                    name: "Delivery Charge"
+        if (deliveryFee > 0) {
+            line_items.push({
+                price_data: {
+                    currency: currency,
+                    product_data: {
+                        name: "Delivery Charge",
+                    },
+                    unit_amount: deliveryFee * 100,
                 },
-                unit_amount: deliveryCharge * 100
-            },
-            quantity: 1
-        })
+                quantity: 1,
+            });
+        }
 
         const session = await stripe.checkout.sessions.create({
             success_url: `${frontend_URL}/verify?success=true&orderId=${newOrder._id}`,
             cancel_url: `${frontend_URL}/verify?success=false&orderId=${newOrder._id}`,
             line_items: line_items,
-            mode: 'payment',
+            mode: "payment",
         });
 
         res.json({ success: true, session_url: session.url });
-
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Error" })
+        res.json({ success: false, message: "Error" });
     }
-}
+};
 
-// Placing User Order for Frontend using stripe
 const placeOrderCod = async (req, res) => {
-
     try {
+        const subtotal = req.body.amount; // Total of items before delivery charges
+        const deliveryFee = subtotal > 999 ? 0 : deliveryCharge; // Apply delivery logic
+
         const newOrder = new orderModel({
             userId: req.body.userId,
             items: req.body.items,
-            amount: req.body.amount,
+            amount: subtotal + deliveryFee, // Total amount includes delivery charge
             address: req.body.address,
-            payment: true,
-        })
+            payment: true, // COD
+        });
         await newOrder.save();
         await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
 
         res.json({ success: true, message: "Order Placed" });
-
     } catch (error) {
         console.log(error);
-        res.json({ success: false, message: "Error" })
+        res.json({ success: false, message: "Error" });
     }
-}
+};
+
 
 // Listing Order for Admin panel
 const listOrders = async (req, res) => {
