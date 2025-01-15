@@ -16,6 +16,8 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   return (
+    <>
+     
     <div className='navbar'>
       <Link to='/'>
         <img className='logo' src={assets.logo} alt="logo" />
@@ -53,6 +55,8 @@ const Navbar = ({ setShowLogin }) => {
         )}
       </div>
     </div>
+    </>
+    
   );
 };
 

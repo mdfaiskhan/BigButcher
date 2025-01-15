@@ -252,6 +252,7 @@ const Add = () => {
                             <option value="Chicken With Skin">Chicken with Skin</option>
                             <option value="Chicken Without SKin">Chicken without Skin</option>
                             <option value="Boneless & Skinless Chicken">Chicken Boneless and Skinless</option>
+                            <option value="Best Sellers">Best Sellers</option>
                                 
                         </select>
                     </div>

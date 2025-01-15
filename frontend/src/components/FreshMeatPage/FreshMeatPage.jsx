@@ -18,7 +18,10 @@ const FreshMeatPage = () => {
         <p>
           Make your meals easier and tastier by choosing Big Butcher – the best way to buy fresh, halal meat online in Bangalore.
         </p>
-        <button className="shop-now-btn">Shop Now</button>
+        <a href="/explore-menu">
+  <button className="shop-now-btn">Shop Now</button>
+</a>
+
       </div>
     </div>
   );

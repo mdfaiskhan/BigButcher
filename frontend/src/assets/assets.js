@@ -147,6 +147,10 @@ export const menu_list = [
         menu_name: "Boneless & Skinless Chicken",
         menu_image: menu12
     },
+    {
+        menu_name:"Best Sellers",
+        menu_image: menu12
+    }
     
     
     ]

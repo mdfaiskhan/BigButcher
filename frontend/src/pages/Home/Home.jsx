@@ -7,6 +7,7 @@ import Header2 from '../../components/Header2/Header2'
 import FeaturesBlock from '../../components/Featuresblock/Featuresblock'
 import FreshMeatPage from '../../components/FreshMeatPage/FreshMeatPage'
 import OfferBanner from '../../components/OfferBanner/OfferBanner'
+import BestSellers from '../../components/BestSellers/BestSellers'
 
 const Home = () => {
 
@@ -19,6 +20,7 @@ const Home = () => {
    
       <Header2/>
       <ExploreMenu setCategory={setCategory} category={category}/>
+      <BestSellers/>
       {/* <FoodDisplay category={category}/> */}
       <FreshMeatPage/>
       <FeaturesBlock/>

@@ -83,6 +83,9 @@ const ExploreMenu = () => {
   const { menu_list } = useContext(StoreContext);
   const navigate = useNavigate();
 
+  // Filter out "Best Sellers" from the menu list
+  const filteredMenuList = menu_list.filter((item) => item.menu_name !== "Best Sellers");
+
   const handleCategoryChange = (categoryName) => {
     navigate(`/food-category/${categoryName}`);
   };
@@ -91,10 +94,10 @@ const ExploreMenu = () => {
     <div className="explore-menu" id="explore-menu">
       <h1>View Our Menu</h1>
       <p className="explore-menu-text">
-      "Savour a variety of premium meats, handpicked to satisfy your cravings. Elevate your meals with our fresh, high-quality cuts delivered straight to your door!"
+        "Savour a variety of premium meats, handpicked to satisfy your cravings. Elevate your meals with our fresh, high-quality cuts delivered straight to your door!"
       </p>
       <div className="explore-menu-list">
-        {menu_list.map((item, index) => (
+        {filteredMenuList.map((item, index) => (
           <div
             onClick={() => handleCategoryChange(item.menu_name)}
             key={index}
@@ -117,3 +120,4 @@ const ExploreMenu = () => {
 };
 
 export default ExploreMenu;
+
