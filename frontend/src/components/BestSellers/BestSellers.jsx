@@ -64,7 +64,7 @@ const BestSellers = () => {
   return (
     <div className="food-category">
       <h2 className="text-4xl font-bold mb-6 text-center text-gray-800">Best Sellers</h2>
-      <h3>Top Trending Products in Bengaluru</h3>
+      <h3>Best-Selling Meats in Bengaluru 🥩🍗</h3>
       <div className="food-category-slider-wrapper" {...swipeHandlers}>
         {/* Left Button (visible only on laptop and above) */}
         {!isMobile && (
