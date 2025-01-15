@@ -93,9 +93,9 @@ const ExploreMenu = () => {
   return (
     <div className="explore-menu" id="explore-menu">
       <h1>View Our Menu</h1>
-      <p className="explore-menu-text">
+{/*       <p className="explore-menu-text">
         "Savour a variety of premium meats, handpicked to satisfy your cravings. Elevate your meals with our fresh, high-quality cuts delivered straight to your door!"
-      </p>
+      </p> */}
       <div className="explore-menu-list">
         {filteredMenuList.map((item, index) => (
           <div
