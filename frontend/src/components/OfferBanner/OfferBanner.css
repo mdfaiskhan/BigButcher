@@ -72,19 +72,20 @@
 }
 
 /* For very small screens (e.g., small mobile phones) */
+/* 
 @media (max-width: 480px) {
   .offer-banner {
     margin: 0;
-      padding: 6px 5px; /* Even smaller padding for very small screens */
+      padding: 6px 5px; 
   }
 
   .scrolling-text {
-      font-size: 10px; /* Even smaller font size for extremely small screens */
+      font-size: 10px;
   }
 
   .scrolling-text span {
-      margin-right: 5px; /* Minimal space between offers */
+      margin-right: 5px; 
   }
-}
+} */
 
   
