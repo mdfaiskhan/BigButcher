@@ -191,7 +191,7 @@ const Cart = () => {
     let finalDeliveryCharge = 0;
     if (Object.keys(cartItems).length > 0) {
       // If subtotal is above 999, delivery is free
-      finalDeliveryCharge = subtotal > 999 ? 0 : 100;
+      finalDeliveryCharge = subtotal > 599 ? 0 : 100;
     }
 
     // Apply the discount and add the delivery charge if needed
