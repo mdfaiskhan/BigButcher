@@ -8,7 +8,7 @@ const OfferBanner = () => {
     <div className="offer-banner">
       <div className="scrolling-text">
         
-        <span>✨ Free Delivery on Orders Above ₹999! ✨ ✨ Free Delivery on Orders Above ₹999! ✨</span>
+        <span>✨ Free Delivery on Orders Above ₹599! ✨ ✨ Free Delivery on Orders Above ₹599! ✨</span>
       </div>
     </div>
   );
